@@ -1,0 +1,410 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Privacy Policy | ERA Intelligence</title>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+            line-height: 1.6;
+            color: #333;
+            background: #f8fafc;
+        }
+
+        /* Navigation */
+        nav {
+            background: rgba(255, 255, 255, 0.95);
+            backdrop-filter: blur(10px);
+            border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+            padding: 1rem 2rem;
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+        }
+
+        .nav-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo {
+            font-size: 1.75rem;
+            font-weight: 700;
+            color: #2563eb;
+            text-decoration: none;
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 2rem;
+            list-style: none;
+        }
+
+        .nav-links a {
+            color: #374151;
+            text-decoration: none;
+            font-weight: 500;
+            transition: color 0.3s ease;
+        }
+
+        .nav-links a:hover {
+            color: #2563eb;
+        }
+
+        /* Main Content */
+        .main-content {
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 4rem 2rem;
+        }
+
+        .page-header {
+            text-align: center;
+            margin-bottom: 3rem;
+        }
+
+        .page-header h1 {
+            font-size: 3rem;
+            font-weight: 700;
+            color: #1f2937;
+            margin-bottom: 1rem;
+        }
+
+        .last-updated {
+            font-size: 0.875rem;
+            color: #6b7280;
+            margin-bottom: 2rem;
+        }
+
+        .policy-section {
+            background: #ffffff;
+            border-radius: 12px;
+            padding: 2rem;
+            margin-bottom: 2rem;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+            border: 1px solid #e5e7eb;
+        }
+
+        .policy-section h2 {
+            font-size: 1.5rem;
+            font-weight: 600;
+            color: #1f2937;
+            margin-bottom: 1rem;
+            border-bottom: 2px solid #667eea;
+            padding-bottom: 0.5rem;
+        }
+
+        .policy-section h3 {
+            font-size: 1.25rem;
+            font-weight: 600;
+            color: #374151;
+            margin: 1.5rem 0 1rem 0;
+        }
+
+        .policy-section p {
+            color: #6b7280;
+            line-height: 1.7;
+            margin-bottom: 1rem;
+        }
+
+        .policy-section ul {
+            color: #6b7280;
+            margin-left: 1.5rem;
+            margin-bottom: 1rem;
+        }
+
+        .policy-section li {
+            margin-bottom: 0.5rem;
+        }
+
+        .highlight {
+            background: #f0f9ff;
+            padding: 1rem;
+            border-left: 4px solid #2563eb;
+            border-radius: 4px;
+            margin: 1rem 0;
+        }
+
+        .highlight p {
+            color: #1e40af;
+            font-weight: 500;
+        }
+
+        /* Contact Section */
+        .contact-section {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            padding: 2rem;
+            border-radius: 12px;
+            text-align: center;
+            margin-top: 3rem;
+        }
+
+        .contact-section h3 {
+            font-size: 1.5rem;
+            margin-bottom: 1rem;
+        }
+
+        .contact-section p {
+            margin-bottom: 1rem;
+            opacity: 0.9;
+        }
+
+        .contact-section a {
+            color: white;
+            text-decoration: none;
+            font-weight: 600;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.5);
+        }
+
+        /* Footer */
+        footer {
+            background: #1f2937;
+            color: white;
+            padding: 3rem 2rem 1rem;
+            margin-top: 4rem;
+        }
+
+        .footer-content {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 2rem;
+        }
+
+        .footer-section h3 {
+            font-size: 1.125rem;
+            font-weight: 600;
+            margin-bottom: 1rem;
+        }
+
+        .footer-section p, .footer-section a {
+            color: #9ca3af;
+            text-decoration: none;
+            line-height: 1.8;
+            display: block;
+            margin-bottom: 0.5rem;
+        }
+
+        .footer-section a:hover {
+            color: white;
+        }
+
+        .footer-bottom {
+            text-align: center;
+            margin-top: 2rem;
+            padding-top: 2rem;
+            border-top: 1px solid #374151;
+            color: #9ca3af;
+        }
+
+        /* Mobile Responsiveness */
+        @media (max-width: 768px) {
+            .nav-links {
+                display: none;
+            }
+            
+            .main-content {
+                padding: 2rem 1rem;
+            }
+            
+            .page-header h1 {
+                font-size: 2rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Navigation -->
+    <nav>
+        <div class="nav-container">
+            <a href="index.html" class="logo">ERA Intelligence</a>
+            <ul class="nav-links">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="about.html">About</a></li>
+                <li><a href="terms.html">Terms</a></li>
+                <li><a href="support.html">Support</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <!-- Main Content -->
+    <div class="main-content">
+        <div class="page-header">
+            <h1>Privacy Policy</h1>
+            <p class="last-updated">Last updated: January 27, 2025</p>
+        </div>
+
+        <div class="policy-section">
+            <h2>Overview</h2>
+            <p>At ERA Intelligence, we believe privacy is a fundamental right. This policy explains how we collect, use, and protect your information when you use our mobile application and services.</p>
+            
+            <div class="highlight">
+                <p><i class="fas fa-shield-alt"></i> We never sell personal information. All data is anonymized before leaving your device.</p>
+            </div>
+        </div>
+
+        <div class="policy-section">
+            <h2>Information We Collect</h2>
+            
+            <h3>Voice Data</h3>
+            <p>When you participate in voice collection activities:</p>
+            <ul>
+                <li>Short audio recordings (typically 30 seconds) of your voice</li>
+                <li>Audio quality metrics and technical specifications</li>
+                <li>General recording environment information (indoor/outdoor, noise level)</li>
+            </ul>
+
+            <h3>Network Data</h3>
+            <p>Our app automatically collects network performance information:</p>
+            <ul>
+                <li>Signal strength and network type (4G, 5G, WiFi)</li>
+                <li>Internet speed measurements</li>
+                <li>General location data (city-level, not precise GPS)</li>
+                <li>Device type and operating system version</li>
+            </ul>
+
+            <h3>Account Information</h3>
+            <ul>
+                <li>Email address for account creation and payments</li>
+                <li>Payment information (processed securely through PayPal)</li>
+                <li>App usage statistics and preferences</li>
+            </ul>
+        </div>
+
+        <div class="policy-section">
+            <h2>How We Use Your Data</h2>
+            
+            <h3>Voice Samples</h3>
+            <p>Your voice recordings help improve:</p>
+            <ul>
+                <li>AI speech recognition systems</li>
+                <li>Voice assistants and smart speakers</li>
+                <li>Accessibility tools for people with disabilities</li>
+                <li>Language learning applications</li>
+            </ul>
+
+            <h3>Network Data</h3>
+            <p>Network information is used to:</p>
+            <ul>
+                <li>Help telecommunications companies improve coverage</li>
+                <li>Optimize network performance in your area</li>
+                <li>Plan infrastructure improvements</li>
+                <li>Research wireless technology development</li>
+            </ul>
+        </div>
+
+        <div class="policy-section">
+            <h2>Data Protection & Anonymization</h2>
+            
+            <h3>Before Data Leaves Your Device</h3>
+            <ul>
+                <li>All personal identifiers are removed</li>
+                <li>Voice recordings are processed to remove background conversations</li>
+                <li>Location data is generalized to city or region level</li>
+                <li>Data is encrypted using industry-standard protocols</li>
+            </ul>
+
+            <h3>What We DON'T Collect</h3>
+            <ul>
+                <li>Your precise GPS location</li>
+                <li>Contact lists or personal files</li>
+                <li>Text messages or call logs</li>
+                <li>Social media information</li>
+                <li>Browsing history</li>
+            </ul>
+        </div>
+
+        <div class="policy-section">
+            <h2>Your Rights & Controls</h2>
+            
+            <h3>You Can Always:</h3>
+            <ul>
+                <li><strong>Delete your data:</strong> Request removal of all your contributions</li>
+                <li><strong>Control collection:</strong> Choose which types of data to share</li>
+                <li><strong>Pause anytime:</strong> Stop data collection whenever you want</li>
+                <li><strong>Export your data:</strong> Get a copy of your account information</li>
+                <li><strong>Close your account:</strong> Delete everything and stop all collection</li>
+            </ul>
+
+            <div class="highlight">
+                <p><i class="fas fa-user-check"></i> You maintain full control over your data participation at all times.</p>
+            </div>
+        </div>
+
+        <div class="policy-section">
+            <h2>Data Sharing</h2>
+            
+            <h3>Who We Share With:</h3>
+            <ul>
+                <li>Technology companies building AI systems (anonymized voice data)</li>
+                <li>Telecommunications companies (anonymized network data)</li>
+                <li>Research institutions (aggregated, anonymized datasets)</li>
+            </ul>
+
+            <h3>We NEVER Share:</h3>
+            <ul>
+                <li>Personal information or contact details</li>
+                <li>Raw, unprocessed recordings</li>
+                <li>Data that can be traced back to you</li>
+                <li>Information with advertisers or marketers</li>
+            </ul>
+        </div>
+
+        <div class="policy-section">
+            <h2>Security Measures</h2>
+            <ul>
+                <li>End-to-end encryption for all data transmission</li>
+                <li>Secure cloud storage with enterprise-grade protection</li>
+                <li>Regular security audits and penetration testing</li>
+                <li>Limited access controls for our team members</li>
+                <li>Automatic data deletion after processing</li>
+            </ul>
+        </div>
+
+        <div class="contact-section">
+            <h3>Questions About Privacy?</h3>
+            <p>We're here to help. Contact our privacy team anytime:</p>
+            <p>📧 <a href="mailto:privacy@eraIntelligence.com">privacy@eraIntelligence.com</a></p>
+            <p>📞 <a href="tel:1-800-372-3282">1-800-ERA-DATA</a></p>
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <footer>
+        <div class="footer-content">
+            <div class="footer-section">
+                <h3>ERA Intelligence</h3>
+                <p>Making data collection fair and transparent.</p>
+                <p>📧 <a href="mailto:hello@eraIntelligence.com">hello@eraIntelligence.com</a></p>
+            </div>
+            <div class="footer-section">
+                <h3>Legal</h3>
+                <a href="privacy.html">Privacy Policy</a>
+                <a href="terms.html">Terms of Service</a>
+                <a href="about.html">About Us</a>
+            </div>
+            <div class="footer-section">
+                <h3>Support</h3>
+                <a href="support.html">Help Center</a>
+                <a href="index.html">Back to Home</a>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2025 ERA Intelligence LLC. All rights reserved.</p>
+        </div>
+    </footer>
+</body>
+</html>

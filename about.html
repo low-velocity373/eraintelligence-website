@@ -1,0 +1,389 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>About Us | ERA Intelligence</title>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+            line-height: 1.6;
+            color: #333;
+            background: #f8fafc;
+        }
+
+        /* Navigation */
+        nav {
+            background: rgba(255, 255, 255, 0.95);
+            backdrop-filter: blur(10px);
+            border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+            padding: 1rem 2rem;
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+        }
+
+        .nav-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo {
+            font-size: 1.75rem;
+            font-weight: 700;
+            color: #2563eb;
+            text-decoration: none;
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 2rem;
+            list-style: none;
+        }
+
+        .nav-links a {
+            color: #374151;
+            text-decoration: none;
+            font-weight: 500;
+            transition: color 0.3s ease;
+        }
+
+        .nav-links a:hover {
+            color: #2563eb;
+        }
+
+        /* Main Content */
+        .main-content {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 4rem 2rem;
+        }
+
+        .page-header {
+            text-align: center;
+            margin-bottom: 4rem;
+        }
+
+        .page-header h1 {
+            font-size: 3rem;
+            font-weight: 700;
+            color: #1f2937;
+            margin-bottom: 1rem;
+        }
+
+        .page-subtitle {
+            font-size: 1.25rem;
+            color: #6b7280;
+            max-width: 600px;
+            margin: 0 auto;
+        }
+
+        .about-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+            gap: 3rem;
+            margin-bottom: 4rem;
+        }
+
+        .about-card {
+            background: #ffffff;
+            border-radius: 16px;
+            padding: 2.5rem;
+            box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+            border: 1px solid #e5e7eb;
+            text-align: center;
+            transition: all 0.3s ease;
+        }
+
+        .about-card:hover {
+            transform: translateY(-4px);
+            box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1);
+        }
+
+        .about-icon {
+            width: 64px;
+            height: 64px;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            border-radius: 16px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 0 auto 1.5rem;
+        }
+
+        .about-icon i {
+            font-size: 2rem;
+            color: white;
+        }
+
+        .about-card h3 {
+            font-size: 1.5rem;
+            font-weight: 600;
+            color: #1f2937;
+            margin-bottom: 1rem;
+        }
+
+        .about-card p {
+            color: #6b7280;
+            line-height: 1.6;
+        }
+
+        .about-values {
+            background: #ffffff;
+            padding: 3rem;
+            border-radius: 16px;
+            text-align: center;
+            box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+            margin-bottom: 3rem;
+        }
+
+        .about-values h3 {
+            font-size: 2rem;
+            font-weight: 600;
+            color: #1f2937;
+            margin-bottom: 2rem;
+        }
+
+        .values-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 2rem;
+        }
+
+        .value-item {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 1rem;
+        }
+
+        .value-item i {
+            font-size: 2rem;
+            color: #667eea;
+        }
+
+        .value-item span {
+            font-weight: 600;
+            color: #1f2937;
+        }
+
+        /* Call to Action */
+        .cta-section {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            padding: 3rem;
+            border-radius: 16px;
+            text-align: center;
+        }
+
+        .cta-section h3 {
+            font-size: 2rem;
+            font-weight: 600;
+            margin-bottom: 1rem;
+        }
+
+        .cta-section p {
+            font-size: 1.125rem;
+            margin-bottom: 2rem;
+            opacity: 0.9;
+        }
+
+        .btn {
+            padding: 0.875rem 2rem;
+            border: none;
+            border-radius: 8px;
+            font-size: 1rem;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            text-decoration: none;
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            background: #ffffff;
+            color: #2563eb;
+        }
+
+        .btn:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 8px 25px rgba(255, 255, 255, 0.3);
+        }
+
+        /* Footer */
+        footer {
+            background: #1f2937;
+            color: white;
+            padding: 3rem 2rem 1rem;
+            margin-top: 4rem;
+        }
+
+        .footer-content {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 2rem;
+        }
+
+        .footer-section h3 {
+            font-size: 1.125rem;
+            font-weight: 600;
+            margin-bottom: 1rem;
+        }
+
+        .footer-section p, .footer-section a {
+            color: #9ca3af;
+            text-decoration: none;
+            line-height: 1.8;
+            display: block;
+            margin-bottom: 0.5rem;
+        }
+
+        .footer-section a:hover {
+            color: white;
+        }
+
+        .footer-bottom {
+            text-align: center;
+            margin-top: 2rem;
+            padding-top: 2rem;
+            border-top: 1px solid #374151;
+            color: #9ca3af;
+        }
+
+        /* Mobile Responsiveness */
+        @media (max-width: 768px) {
+            .nav-links {
+                display: none;
+            }
+            
+            .main-content {
+                padding: 2rem 1rem;
+            }
+            
+            .page-header h1 {
+                font-size: 2rem;
+            }
+            
+            .about-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Navigation -->
+    <nav>
+        <div class="nav-container">
+            <a href="index.html" class="logo">ERA Intelligence</a>
+            <ul class="nav-links">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="index.html#features">How It Works</a></li>
+                <li><a href="index.html#earnings">Earnings</a></li>
+                <li><a href="support.html">Support</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <!-- Main Content -->
+    <div class="main-content">
+        <div class="page-header">
+            <h1>About ERA Intelligence</h1>
+            <p class="page-subtitle">Building the future of ethical data collection, one contribution at a time.</p>
+        </div>
+
+        <div class="about-grid">
+            <div class="about-card">
+                <div class="about-icon">
+                    <i class="fas fa-user-graduate"></i>
+                </div>
+                <h3>Our Founder</h3>
+                <p>ERA Intelligence was founded by a college sophomore studying Cybersecurity and Computer Science with a passion for ethical technology. Driven by the belief that data collection should be transparent and mutually beneficial, our founder is dedicated to making a positive difference in the world through innovative solutions.</p>
+            </div>
+            
+            <div class="about-card">
+                <div class="about-icon">
+                    <i class="fas fa-heart"></i>
+                </div>
+                <h3>Our Mission</h3>
+                <p>We believe in making the world better through technology. ERA Intelligence was born from the idea that individuals should be fairly compensated for their valuable data contributions while maintaining complete privacy and control over their information.</p>
+            </div>
+            
+            <div class="about-card">
+                <div class="about-icon">
+                    <i class="fas fa-lightbulb"></i>
+                </div>
+                <h3>Our Vision</h3>
+                <p>To create a future where data collection is transparent, ethical, and mutually beneficial. We're building technology that respects user privacy while enabling breakthrough innovations in AI and telecommunications.</p>
+            </div>
+        </div>
+
+        <div class="about-values">
+            <h3>Our Core Values</h3>
+            <div class="values-grid">
+                <div class="value-item">
+                    <i class="fas fa-shield-alt"></i>
+                    <span>Privacy First</span>
+                </div>
+                <div class="value-item">
+                    <i class="fas fa-balance-scale"></i>
+                    <span>Fair Compensation</span>
+                </div>
+                <div class="value-item">
+                    <i class="fas fa-eye"></i>
+                    <span>Transparency</span>
+                </div>
+                <div class="value-item">
+                    <i class="fas fa-rocket"></i>
+                    <span>Innovation</span>
+                </div>
+            </div>
+        </div>
+
+        <div class="cta-section">
+            <h3>Ready to Join Our Mission?</h3>
+            <p>Help us build a more ethical and transparent future for data collection.</p>
+            <a href="index.html" class="btn">
+                <i class="fas fa-download"></i>
+                Get Started Today
+            </a>
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <footer>
+        <div class="footer-content">
+            <div class="footer-section">
+                <h3>ERA Intelligence</h3>
+                <p>Making data collection fair and transparent.</p>
+                <p>📧 <a href="mailto:eliasralamat@gmail.com">eliasralamat@gmail.com</a></p>
+            </div>
+            <div class="footer-section">
+                <h3>Quick Links</h3>
+                <a href="index.html">Home</a>
+                <a href="privacy.html">Privacy Policy</a>
+                <a href="terms.html">Terms of Service</a>
+                <a href="support.html">Support</a>
+            </div>
+            <div class="footer-section">
+                <h3>For Businesses</h3>
+                <a href="mailto:partnerships@eraIntelligence.com">Partnerships</a>
+                <a href="mailto:partnerships@eraIntelligence.com">Enterprise Solutions</a>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2025 ERA Intelligence LLC. All rights reserved.</p>
+        </div>
+    </footer>
+</body>
+</html>

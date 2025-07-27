@@ -1,0 +1,441 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Terms of Service | ERA Intelligence</title>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+            line-height: 1.6;
+            color: #333;
+            background: #f8fafc;
+        }
+
+        /* Navigation */
+        nav {
+            background: rgba(255, 255, 255, 0.95);
+            backdrop-filter: blur(10px);
+            border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+            padding: 1rem 2rem;
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+        }
+
+        .nav-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo {
+            font-size: 1.75rem;
+            font-weight: 700;
+            color: #2563eb;
+            text-decoration: none;
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 2rem;
+            list-style: none;
+        }
+
+        .nav-links a {
+            color: #374151;
+            text-decoration: none;
+            font-weight: 500;
+            transition: color 0.3s ease;
+        }
+
+        .nav-links a:hover {
+            color: #2563eb;
+        }
+
+        /* Main Content */
+        .main-content {
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 4rem 2rem;
+        }
+
+        .page-header {
+            text-align: center;
+            margin-bottom: 3rem;
+        }
+
+        .page-header h1 {
+            font-size: 3rem;
+            font-weight: 700;
+            color: #1f2937;
+            margin-bottom: 1rem;
+        }
+
+        .last-updated {
+            font-size: 0.875rem;
+            color: #6b7280;
+            margin-bottom: 2rem;
+        }
+
+        .terms-section {
+            background: #ffffff;
+            border-radius: 12px;
+            padding: 2rem;
+            margin-bottom: 2rem;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+            border: 1px solid #e5e7eb;
+        }
+
+        .terms-section h2 {
+            font-size: 1.5rem;
+            font-weight: 600;
+            color: #1f2937;
+            margin-bottom: 1rem;
+            border-bottom: 2px solid #667eea;
+            padding-bottom: 0.5rem;
+        }
+
+        .terms-section h3 {
+            font-size: 1.25rem;
+            font-weight: 600;
+            color: #374151;
+            margin: 1.5rem 0 1rem 0;
+        }
+
+        .terms-section p {
+            color: #6b7280;
+            line-height: 1.7;
+            margin-bottom: 1rem;
+        }
+
+        .terms-section ul {
+            color: #6b7280;
+            margin-left: 1.5rem;
+            margin-bottom: 1rem;
+        }
+
+        .terms-section li {
+            margin-bottom: 0.5rem;
+        }
+
+        .important {
+            background: #fef3c7;
+            padding: 1rem;
+            border-left: 4px solid #f59e0b;
+            border-radius: 4px;
+            margin: 1rem 0;
+        }
+
+        .important p {
+            color: #92400e;
+            font-weight: 500;
+        }
+
+        /* Contact Section */
+        .contact-section {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            padding: 2rem;
+            border-radius: 12px;
+            text-align: center;
+            margin-top: 3rem;
+        }
+
+        .contact-section h3 {
+            font-size: 1.5rem;
+            margin-bottom: 1rem;
+        }
+
+        .contact-section p {
+            margin-bottom: 1rem;
+            opacity: 0.9;
+        }
+
+        .contact-section a {
+            color: white;
+            text-decoration: none;
+            font-weight: 600;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.5);
+        }
+
+        /* Footer */
+        footer {
+            background: #1f2937;
+            color: white;
+            padding: 3rem 2rem 1rem;
+            margin-top: 4rem;
+        }
+
+        .footer-content {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 2rem;
+        }
+
+        .footer-section h3 {
+            font-size: 1.125rem;
+            font-weight: 600;
+            margin-bottom: 1rem;
+        }
+
+        .footer-section p, .footer-section a {
+            color: #9ca3af;
+            text-decoration: none;
+            line-height: 1.8;
+            display: block;
+            margin-bottom: 0.5rem;
+        }
+
+        .footer-section a:hover {
+            color: white;
+        }
+
+        .footer-bottom {
+            text-align: center;
+            margin-top: 2rem;
+            padding-top: 2rem;
+            border-top: 1px solid #374151;
+            color: #9ca3af;
+        }
+
+        /* Mobile Responsiveness */
+        @media (max-width: 768px) {
+            .nav-links {
+                display: none;
+            }
+            
+            .main-content {
+                padding: 2rem 1rem;
+            }
+            
+            .page-header h1 {
+                font-size: 2rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Navigation -->
+    <nav>
+        <div class="nav-container">
+            <a href="index.html" class="logo">ERA Intelligence</a>
+            <ul class="nav-links">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="about.html">About</a></li>
+                <li><a href="privacy.html">Privacy</a></li>
+                <li><a href="support.html">Support</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <!-- Main Content -->
+    <div class="main-content">
+        <div class="page-header">
+            <h1>Terms of Service</h1>
+            <p class="last-updated">Last updated: January 27, 2025</p>
+        </div>
+
+        <div class="terms-section">
+            <h2>Agreement to Terms</h2>
+            <p>By downloading, installing, or using the ERA Intelligence mobile application, you agree to be bound by these Terms of Service. If you do not agree to these terms, please do not use our services.</p>
+            
+            <div class="important">
+                <p><i class="fas fa-exclamation-triangle"></i> You must be 18 years or older to use ERA Intelligence.</p>
+            </div>
+        </div>
+
+        <div class="terms-section">
+            <h2>Eligibility</h2>
+            
+            <h3>Age Requirements</h3>
+            <ul>
+                <li>You must be at least 18 years old to participate</li>
+                <li>Participants under 18 require explicit parental consent</li>
+                <li>We may request age verification at any time</li>
+            </ul>
+
+            <h3>Geographic Restrictions</h3>
+            <ul>
+                <li>Currently available in the United States and Canada</li>
+                <li>You must be physically located in an eligible region to contribute data</li>
+                <li>VPN usage is prohibited during data collection</li>
+            </ul>
+        </div>
+
+        <div class="terms-section">
+            <h2>Data Collection & Contribution</h2>
+            
+            <h3>What You're Contributing</h3>
+            <ul>
+                <li><strong>Voice Samples:</strong> Short audio recordings for AI training</li>
+                <li><strong>Network Data:</strong> Anonymous cellular performance information</li>
+                <li><strong>Quality Metrics:</strong> Technical data about recording conditions</li>
+            </ul>
+
+            <h3>Your Responsibilities</h3>
+            <ul>
+                <li>Provide genuine, unmanipulated data</li>
+                <li>Do not share your account with others</li>
+                <li>Report any technical issues promptly</li>
+                <li>Follow all local laws regarding recording and privacy</li>
+            </ul>
+
+            <div class="important">
+                <p><i class="fas fa-ban"></i> Attempts to manipulate or artificially generate data will result in immediate account termination.</p>
+            </div>
+        </div>
+
+        <div class="terms-section">
+            <h2>Payment Terms</h2>
+            
+            <h3>How Payments Work</h3>
+            <ul>
+                <li>Payments are processed weekly every Friday</li>
+                <li>Earnings are based on data quality and market demand</li>
+                <li>No minimum payout threshold required</li>
+                <li>Payments are sent via PayPal only</li>
+            </ul>
+
+            <h3>Payment Rates</h3>
+            <ul>
+                <li>Voice samples: $0.15 - $0.75 per 30-second recording</li>
+                <li>Network data: $0.02 - $0.08 per data point</li>
+                <li>Rates may vary based on quality and demand</li>
+                <li>We reserve the right to adjust rates with 30 days notice</li>
+            </ul>
+
+            <h3>Tax Responsibilities</h3>
+            <ul>
+                <li>You are responsible for reporting earnings to tax authorities</li>
+                <li>We will provide tax documents for earnings over $600/year</li>
+                <li>International users must comply with their local tax laws</li>
+            </ul>
+        </div>
+
+        <div class="terms-section">
+            <h2>Data Quality Standards</h2>
+            
+            <h3>Voice Recording Requirements</h3>
+            <ul>
+                <li>Clear, audible speech without background noise</li>
+                <li>Read provided text accurately and naturally</li>
+                <li>Recordings must be in your natural speaking voice</li>
+                <li>No use of voice modulation or artificial effects</li>
+            </ul>
+
+            <h3>Prohibited Activities</h3>
+            <ul>
+                <li>Using multiple accounts or sharing accounts</li>
+                <li>Automating data collection or submission</li>
+                <li>Submitting low-quality or corrupted data</li>
+                <li>Attempting to reverse-engineer our algorithms</li>
+            </ul>
+        </div>
+
+        <div class="terms-section">
+            <h2>Account Management</h2>
+            
+            <h3>Account Security</h3>
+            <ul>
+                <li>You are responsible for maintaining account security</li>
+                <li>Use a strong, unique password</li>
+                <li>Report suspicious activity immediately</li>
+                <li>Do not share login credentials</li>
+            </ul>
+
+            <h3>Account Termination</h3>
+            <p>We may suspend or terminate accounts for:</p>
+            <ul>
+                <li>Violation of these terms</li>
+                <li>Fraudulent or suspicious activity</li>
+                <li>Technical abuse or system manipulation</li>
+                <li>Extended periods of inactivity (1+ years)</li>
+            </ul>
+        </div>
+
+        <div class="terms-section">
+            <h2>Intellectual Property</h2>
+            
+            <h3>Your Rights</h3>
+            <ul>
+                <li>You retain rights to your original voice recordings</li>
+                <li>By contributing, you grant us a license to use anonymized data</li>
+                <li>You can request data deletion at any time</li>
+            </ul>
+
+            <h3>Our Rights</h3>
+            <ul>
+                <li>ERA Intelligence app and technology are our property</li>
+                <li>You may not copy, modify, or distribute our software</li>
+                <li>Our algorithms and data processing methods are proprietary</li>
+            </ul>
+        </div>
+
+        <div class="terms-section">
+            <h2>Limitation of Liability</h2>
+            <p>ERA Intelligence provides services "as is" without warranties. We are not liable for:</p>
+            <ul>
+                <li>Technical issues or service interruptions</li>
+                <li>Payment delays beyond our control</li>
+                <li>Loss of earnings due to market changes</li>
+                <li>Indirect or consequential damages</li>
+            </ul>
+        </div>
+
+        <div class="terms-section">
+            <h2>Changes to Terms</h2>
+            <p>We may update these terms occasionally. When we do:</p>
+            <ul>
+                <li>We'll notify you via email and in-app notifications</li>
+                <li>Changes take effect 30 days after notification</li>
+                <li>Continued use constitutes acceptance of new terms</li>
+                <li>You may close your account if you disagree with changes</li>
+            </ul>
+        </div>
+
+        <div class="contact-section">
+            <h3>Questions About These Terms?</h3>
+            <p>Our legal team is here to help clarify anything:</p>
+            <p>📧 <a href="mailto:legal@eraIntelligence.com">legal@eraIntelligence.com</a></p>
+            <p>📞 <a href="tel:1-800-372-3282">1-800-ERA-DATA</a></p>
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <footer>
+        <div class="footer-content">
+            <div class="footer-section">
+                <h3>ERA Intelligence</h3>
+                <p>Making data collection fair and transparent.</p>
+                <p>📧 <a href="mailto:hello@eraIntelligence.com">hello@eraIntelligence.com</a></p>
+            </div>
+            <div class="footer-section">
+                <h3>Legal</h3>
+                <a href="privacy.html">Privacy Policy</a>
+                <a href="terms.html">Terms of Service</a>
+                <a href="about.html">About Us</a>
+            </div>
+            <div class="footer-section">
+                <h3>Support</h3>
+                <a href="support.html">Help Center</a>
+                <a href="index.html">Back to Home</a>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2025 ERA Intelligence LLC. All rights reserved.</p>
+        </div>
+    </footer>
+</body>
+</html>

@@ -1,0 +1,597 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Support Center | ERA Intelligence</title>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+            line-height: 1.6;
+            color: #333;
+            background: #f8fafc;
+        }
+
+        /* Navigation */
+        nav {
+            background: rgba(255, 255, 255, 0.95);
+            backdrop-filter: blur(10px);
+            border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+            padding: 1rem 2rem;
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+        }
+
+        .nav-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo {
+            font-size: 1.75rem;
+            font-weight: 700;
+            color: #2563eb;
+            text-decoration: none;
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 2rem;
+            list-style: none;
+        }
+
+        .nav-links a {
+            color: #374151;
+            text-decoration: none;
+            font-weight: 500;
+            transition: color 0.3s ease;
+        }
+
+        .nav-links a:hover {
+            color: #2563eb;
+        }
+
+        /* Main Content */
+        .main-content {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 4rem 2rem;
+        }
+
+        .page-header {
+            text-align: center;
+            margin-bottom: 4rem;
+        }
+
+        .page-header h1 {
+            font-size: 3rem;
+            font-weight: 700;
+            color: #1f2937;
+            margin-bottom: 1rem;
+        }
+
+        .page-subtitle {
+            font-size: 1.25rem;
+            color: #6b7280;
+            max-width: 600px;
+            margin: 0 auto;
+        }
+
+        /* Contact Options */
+        .contact-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+            margin-bottom: 4rem;
+        }
+
+        .contact-card {
+            background: #ffffff;
+            border-radius: 16px;
+            padding: 2.5rem;
+            box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+            border: 1px solid #e5e7eb;
+            text-align: center;
+            transition: all 0.3s ease;
+        }
+
+        .contact-card:hover {
+            transform: translateY(-4px);
+            box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1);
+        }
+
+        .contact-icon {
+            width: 64px;
+            height: 64px;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            border-radius: 16px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 0 auto 1.5rem;
+        }
+
+        .contact-icon i {
+            font-size: 2rem;
+            color: white;
+        }
+
+        .contact-card h3 {
+            font-size: 1.5rem;
+            font-weight: 600;
+            color: #1f2937;
+            margin-bottom: 1rem;
+        }
+
+        .contact-card p {
+            color: #6b7280;
+            margin-bottom: 1.5rem;
+        }
+
+        .contact-link {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            color: #2563eb;
+            text-decoration: none;
+            font-weight: 600;
+            padding: 0.75rem 1.5rem;
+            border: 2px solid #2563eb;
+            border-radius: 8px;
+            transition: all 0.3s ease;
+        }
+
+        .contact-link:hover {
+            background: #2563eb;
+            color: white;
+        }
+
+        /* FAQ Section */
+        .faq-section {
+            background: #ffffff;
+            border-radius: 16px;
+            padding: 3rem;
+            box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+            margin-bottom: 3rem;
+        }
+
+        .faq-section h2 {
+            font-size: 2rem;
+            font-weight: 600;
+            color: #1f2937;
+            margin-bottom: 2rem;
+            text-align: center;
+        }
+
+        .faq-item {
+            border-bottom: 1px solid #e5e7eb;
+            padding: 1.5rem 0;
+        }
+
+        .faq-question {
+            font-size: 1.125rem;
+            font-weight: 600;
+            color: #1f2937;
+            margin-bottom: 1rem;
+            cursor: pointer;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            transition: color 0.3s ease;
+        }
+
+        .faq-question:hover {
+            color: #2563eb;
+        }
+
+        .faq-answer {
+            color: #6b7280;
+            line-height: 1.6;
+            display: none;
+            padding-left: 1rem;
+            border-left: 3px solid #2563eb;
+        }
+
+        .faq-answer.active {
+            display: block;
+        }
+
+        .faq-icon {
+            transition: transform 0.3s ease;
+        }
+
+        /* Resource Links */
+        .resources {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 2rem;
+            margin-bottom: 3rem;
+        }
+
+        .resource-card {
+            background: #ffffff;
+            border-radius: 12px;
+            padding: 1.5rem;
+            border: 1px solid #e5e7eb;
+            transition: all 0.3s ease;
+        }
+
+        .resource-card:hover {
+            border-color: #2563eb;
+            box-shadow: 0 4px 12px rgba(37, 99, 235, 0.1);
+        }
+
+        .resource-card h4 {
+            font-size: 1.125rem;
+            font-weight: 600;
+            color: #1f2937;
+            margin-bottom: 0.5rem;
+        }
+
+        .resource-card p {
+            color: #6b7280;
+            font-size: 0.875rem;
+            margin-bottom: 1rem;
+        }
+
+        .resource-link {
+            color: #2563eb;
+            text-decoration: none;
+            font-weight: 500;
+            font-size: 0.875rem;
+        }
+
+        /* Emergency Contact */
+        .emergency-section {
+            background: linear-gradient(135deg, #dc2626 0%, #b91c1c 100%);
+            color: white;
+            padding: 2rem;
+            border-radius: 12px;
+            text-align: center;
+            margin-top: 3rem;
+        }
+
+        .emergency-section h3 {
+            font-size: 1.5rem;
+            margin-bottom: 1rem;
+        }
+
+        .emergency-section p {
+            margin-bottom: 1rem;
+            opacity: 0.9;
+        }
+
+        .emergency-section a {
+            color: white;
+            text-decoration: none;
+            font-weight: 600;
+            font-size: 1.125rem;
+            border-bottom: 2px solid rgba(255, 255, 255, 0.5);
+        }
+
+        /* Footer */
+        footer {
+            background: #1f2937;
+            color: white;
+            padding: 3rem 2rem 1rem;
+            margin-top: 4rem;
+        }
+
+        .footer-content {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 2rem;
+        }
+
+        .footer-section h3 {
+            font-size: 1.125rem;
+            font-weight: 600;
+            margin-bottom: 1rem;
+        }
+
+        .footer-section p, .footer-section a {
+            color: #9ca3af;
+            text-decoration: none;
+            line-height: 1.8;
+            display: block;
+            margin-bottom: 0.5rem;
+        }
+
+        .footer-section a:hover {
+            color: white;
+        }
+
+        .footer-bottom {
+            text-align: center;
+            margin-top: 2rem;
+            padding-top: 2rem;
+            border-top: 1px solid #374151;
+            color: #9ca3af;
+        }
+
+        /* Mobile Responsiveness */
+        @media (max-width: 768px) {
+            .nav-links {
+                display: none;
+            }
+            
+            .main-content {
+                padding: 2rem 1rem;
+            }
+            
+            .page-header h1 {
+                font-size: 2rem;
+            }
+            
+            .contact-grid, .resources {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Navigation -->
+    <nav>
+        <div class="nav-container">
+            <a href="index.html" class="logo">ERA Intelligence</a>
+            <ul class="nav-links">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="about.html">About</a></li>
+                <li><a href="privacy.html">Privacy</a></li>
+                <li><a href="terms.html">Terms</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <!-- Main Content -->
+    <div class="main-content">
+        <div class="page-header">
+            <h1>Support Center</h1>
+            <p class="page-subtitle">We're here to help! Find answers to your questions or get in touch with our support team.</p>
+        </div>
+
+        <!-- Contact Options -->
+        <div class="contact-grid">
+            <div class="contact-card">
+                <div class="contact-icon">
+                    <i class="fas fa-envelope"></i>
+                </div>
+                <h3>Email Support</h3>
+                <p>Get detailed help via email. We typically respond within 24 hours.</p>
+                <a href="mailto:hello@eraIntelligence.com" class="contact-link">
+                    <i class="fas fa-paper-plane"></i>
+                    Send Email
+                </a>
+            </div>
+
+            <div class="contact-card">
+                <div class="contact-icon">
+                    <i class="fas fa-phone"></i>
+                </div>
+                <h3>Phone Support</h3>
+                <p>Speak directly with our support team for immediate assistance.</p>
+                <a href="tel:1-800-372-3282" class="contact-link">
+                    <i class="fas fa-phone"></i>
+                    Call Now
+                </a>
+            </div>
+
+            <div class="contact-card">
+                <div class="contact-icon">
+                    <i class="fas fa-comments"></i>
+                </div>
+                <h3>Live Chat</h3>
+                <p>Chat with our team in real-time during business hours (9 AM - 6 PM EST).</p>
+                <a href="#" onclick="alert('Live chat feature coming soon!')" class="contact-link">
+                    <i class="fas fa-comment-dots"></i>
+                    Start Chat
+                </a>
+            </div>
+        </div>
+
+        <!-- FAQ Section -->
+        <div class="faq-section">
+            <h2>Frequently Asked Questions</h2>
+            
+            <div class="faq-item">
+                <div class="faq-question">
+                    How do I get started with ERA Intelligence?
+                    <i class="fas fa-chevron-down faq-icon"></i>
+                </div>
+                <div class="faq-answer">
+                    Download the app from the iOS App Store, create an account with your email, grant necessary permissions, and complete the quick voice calibration. You can start earning immediately!
+                </div>
+            </div>
+
+            <div class="faq-item">
+                <div class="faq-question">
+                    When will I receive my first payment?
+                    <i class="fas fa-chevron-down faq-icon"></i>
+                </div>
+                <div class="faq-answer">
+                    Payments are processed every Friday for the previous week's contributions. Your first payment will arrive the Friday after you've made your first successful data contributions.
+                </div>
+            </div>
+
+            <div class="faq-item">
+                <div class="faq-question">
+                    Why was my voice sample rejected?
+                    <i class="fas fa-chevron-down faq-icon"></i>
+                </div>
+                <div class="faq-answer">
+                    Common reasons include background noise, not reading the provided text accurately, poor audio quality, or technical issues. Check the app for specific feedback and try recording in a quieter environment.
+                </div>
+            </div>
+
+            <div class="faq-item">
+                <div class="faq-question">
+                    How much data does the app use?
+                    <i class="fas fa-chevron-down faq-icon"></i>
+                </div>
+                <div class="faq-answer">
+                    ERA Intelligence uses approximately 10-20 MB per day for uploading voice samples and network data. You can restrict uploads to WiFi-only in the app settings to conserve mobile data.
+                </div>
+            </div>
+
+            <div class="faq-item">
+                <div class="faq-question">
+                    Can I delete my account and data?
+                    <i class="fas fa-chevron-down faq-icon"></i>
+                </div>
+                <div class="faq-answer">
+                    Yes! You can delete your account and request removal of all your data at any time through the app settings or by contacting our support team. This process is irreversible and takes up to 30 days to complete.
+                </div>
+            </div>
+
+            <div class="faq-item">
+                <div class="faq-question">
+                    What if I'm having technical issues with the app?
+                    <i class="fas fa-chevron-down faq-icon"></i>
+                </div>
+                <div class="faq-answer">
+                    First, try restarting the app and ensuring you have the latest version. If issues persist, contact our support team with your device model, iOS version, and a description of the problem for personalized assistance.
+                </div>
+            </div>
+        </div>
+
+        <!-- Resource Links -->
+        <h2 style="text-align: center; margin-bottom: 2rem; color: #1f2937;">Helpful Resources</h2>
+        <div class="resources">
+            <div class="resource-card">
+                <h4>Getting Started Guide</h4>
+                <p>Step-by-step instructions for new users</p>
+                <a href="index.html" class="resource-link">View Guide →</a>
+            </div>
+            
+            <div class="resource-card">
+                <h4>Privacy Controls</h4>
+                <p>Learn how to manage your data and privacy settings</p>
+                <a href="privacy.html" class="resource-link">Privacy Policy →</a>
+            </div>
+            
+            <div class="resource-card">
+                <h4>Payment Information</h4>
+                <p>Everything about earnings, payments, and taxes</p>
+                <a href="index.html#earnings" class="resource-link">Earnings Info →</a>
+            </div>
+            
+            <div class="resource-card">
+                <h4>Technical Requirements</h4>
+                <p>Device compatibility and system requirements</p>
+                <a href="#" onclick="alert('Technical requirements: iOS 14+, microphone access, location services')" class="resource-link">View Requirements →</a>
+            </div>
+            
+            <div class="resource-card">
+                <h4>Community Forum</h4>
+                <p>Connect with other users and share experiences</p>
+                <a href="#" onclick="alert('Community forum launching soon!')" class="resource-link">Join Forum →</a>
+            </div>
+            
+            <div class="resource-card">
+                <h4>Business Partnerships</h4>
+                <p>Information for companies interested in our data</p>
+                <a href="mailto:partnerships@eraIntelligence.com" class="resource-link">Contact Business Team →</a>
+            </div>
+        </div>
+
+        <!-- Business Hours -->
+        <div style="background: #ffffff; padding: 2rem; border-radius: 12px; text-align: center; margin-bottom: 2rem; border: 1px solid #e5e7eb;">
+            <h3 style="color: #1f2937; margin-bottom: 1rem;">Support Hours</h3>
+            <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 1rem;">
+                <div>
+                    <p style="font-weight: 600; color: #374151;">Phone & Live Chat</p>
+                    <p style="color: #6b7280; font-size: 0.875rem;">Monday - Friday: 9 AM - 6 PM EST</p>
+                </div>
+                <div>
+                    <p style="font-weight: 600; color: #374151;">Email Support</p>
+                    <p style="color: #6b7280; font-size: 0.875rem;">24/7 (Response within 24 hours)</p>
+                </div>
+                <div>
+                    <p style="font-weight: 600; color: #374151;">Emergency Issues</p>
+                    <p style="color: #6b7280; font-size: 0.875rem;">Available 24/7</p>
+                </div>
+            </div>
+        </div>
+
+        <!-- Emergency Contact -->
+        <div class="emergency-section">
+            <h3><i class="fas fa-exclamation-triangle"></i> Account Security Emergency</h3>
+            <p>If you suspect unauthorized access to your account or notice suspicious activity, contact us immediately:</p>
+            <p><a href="mailto:security@eraIntelligence.com">security@eraIntelligence.com</a></p>
+            <p><a href="tel:1-800-372-3282">1-800-ERA-DATA (24/7 Emergency Line)</a></p>
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <footer>
+        <div class="footer-content">
+            <div class="footer-section">
+                <h3>ERA Intelligence</h3>
+                <p>Making data collection fair and transparent.</p>
+                <p>📧 <a href="mailto:hello@eraIntelligence.com">hello@eraIntelligence.com</a></p>
+            </div>
+            <div class="footer-section">
+                <h3>Support</h3>
+                <a href="support.html">Help Center</a>
+                <a href="mailto:hello@eraIntelligence.com">Contact Support</a>
+                <a href="tel:1-800-372-3282">Call Support</a>
+            </div>
+            <div class="footer-section">
+                <h3>Legal</h3>
+                <a href="privacy.html">Privacy Policy</a>
+                <a href="terms.html">Terms of Service</a>
+                <a href="about.html">About Us</a>
+            </div>
+            <div class="footer-section">
+                <h3>Quick Links</h3>
+                <a href="index.html">Back to Home</a>
+                <a href="index.html#faq">Main FAQ</a>
+                <a href="index.html#earnings">Earnings Info</a>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2025 ERA Intelligence LLC. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <script>
+        // FAQ Accordion functionality
+        document.querySelectorAll('.faq-question').forEach(question => {
+            question.addEventListener('click', () => {
+                const answer = question.nextElementSibling;
+                const icon = question.querySelector('.faq-icon');
+                
+                // Close all other answers
+                document.querySelectorAll('.faq-answer').forEach(otherAnswer => {
+                    if (otherAnswer !== answer) {
+                        otherAnswer.classList.remove('active');
+                    }
+                });
+                
+                document.querySelectorAll('.faq-icon').forEach(otherIcon => {
+                    if (otherIcon !== icon) {
+                        otherIcon.style.transform = 'rotate(0deg)';
+                    }
+                });
+                
+                // Toggle current answer
+                answer.classList.toggle('active');
+                icon.style.transform = answer.classList.contains('active') ? 'rotate(180deg)' : 'rotate(0deg)';
+            });
+        });
+    </script>
+</body>
+</html>
